@@ -79,26 +79,26 @@ const ShowDetails = ({ id, details, type }) => {
         name="rating"
       />
       <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
-        Overview:
+        Overview :
       </h2>
-      <p>{details.overview}</p>
+      <p className="pl-2">{details.overview}</p>
 
       <div className="flex-nowrap">
         {details.runtime && (
           <div>
             <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
-              Run Time
+              Run Time :
             </h2>
-            <p>{`${Math.floor(details.runtime / 60)} Hours ${
+            <p className="pl-2">{`${Math.floor(details.runtime / 60)} Hours ${
               details.runtime % 60
             } Minutes`}</p>
           </div>
         )}
         <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
-          Home Page
+          Home Page :
         </h2>
         <a
-          className="cursor-pointer"
+          className="cursor-pointer pl-2"
           href={details.homepage}
           target="_blank"
           rel="noreferrer"
@@ -108,11 +108,11 @@ const ShowDetails = ({ id, details, type }) => {
       </div>
       {cast[cast.length - 1] !== undefined && (
         <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
-          Director:
+          Director :
         </h2>
       )}
-      <p>{cast[cast.length - 1]}</p>
-      <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">Cast:</h2>
+      <p className="pl-2">{cast[cast.length - 1]}</p>
+      <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">Cast :</h2>
       <div
         className="flex 
 gap-x-5 overflow-x-scroll noscroll hover:showscroll hover:overflow-x-scroll hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-300 hover:scrollbar-thumb-rounded-full hover:scrollbar-track-rounded-full overflow-y-hidden py-4"
