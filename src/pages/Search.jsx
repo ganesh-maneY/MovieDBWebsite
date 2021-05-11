@@ -94,7 +94,7 @@ const Search = () => {
         ))}
       </FlipMove>
       {!isLoading && (
-        <div className="px-4 py-3 flex items-center justify-between sm:px-6">
+        <div className="px-auto py-3 flex items-center justify-between sm:px-6">
           <div className="flex-1 flex items-center justify-center">
             <div>
               <nav
@@ -117,7 +117,7 @@ const Search = () => {
                       behavior: "smooth",
                     });
                   }}
-                  className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                  className={`relative inline-flex items-center px-px md:px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                     currentPage === pageNumbers[0]
                       ? "cursor-not-allowed disabled:bg-gray-500 text-gray-50"
                       : null
@@ -143,7 +143,7 @@ const Search = () => {
                       behavior: "smooth",
                     });
                   }}
-                  className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                  className={`relative inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                     minPageNumberLimit === pageNumbers[0]
                       ? "cursor-not-allowed bg-gray-500 text-gray-50"
                       : null
@@ -194,7 +194,7 @@ const Search = () => {
                       behavior: "smooth",
                     });
                   }}
-                  className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                  className={`relative inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                     maxPageNumberLimit >= totalPages
                       ? "cursor-not-allowed disabled:bg-gray-500 text-gray-50"
                       : null
@@ -206,7 +206,7 @@ const Search = () => {
                   <DotsHorizontalIcon className="h-5 w-5" />
                 </button>
                 <p
-                  className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium  focus:outline-none bg-gray-500 text-gray-50`}
+                  className={`relative hidden md:inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 text-sm font-medium  focus:outline-none bg-gray-500 text-gray-50`}
                 >
                   {totalPages}
                 </p>
@@ -226,7 +226,7 @@ const Search = () => {
                       behavior: "smooth",
                     });
                   }}
-                  className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                  className={`relative inline-flex items-center px-px md:px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                     currentPage === pageNumbers[pageNumbers.length - 1]
                       ? "cursor-not-allowed disabled:bg-gray-500 text-gray-50"
                       : null

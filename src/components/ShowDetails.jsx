@@ -21,12 +21,12 @@ const ShowDetails = ({ id, details, type }) => {
     fetchAPI();
   }, [id, type]);
   return (
-    <div className="container mx-auto px-6 py-28">
+    <div className="flex flex-col mx-auto px-2.5 md:px-60 py-20 md:py-28">
       <h2 className="text-xl md:text-4xl font-bold text-center mb-4">
         {details.title || details.name}
       </h2>
       <div className="relative flex  items-center">
-        <div className="w-full px-4 py-5 ">
+        <div className="w-full px-0 md:px-4 py-2 md:py-5 ">
           <img
             className="shadow rounded w-full h-auto align-middle border-2"
             src={`
@@ -46,11 +46,7 @@ const ShowDetails = ({ id, details, type }) => {
           />
         </div>
         {showVideo && (
-          <PlayVideo
-            url={movieVideo}
-            setShowModal={setShowVideo}
-            name={details.title}
-          />
+          <PlayVideo url={movieVideo} setShowModal={setShowVideo} />
         )}
       </div>
 

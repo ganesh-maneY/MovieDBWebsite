@@ -34,10 +34,9 @@ function Homepage() {
   }, [currentPage]);
   return (
     <>
-      {/* <Categories changeGenre={setGenre} /> */}
       <div className="py-20 md:pt-20">
         <h2 className="text-2xl font-bold text-center my-4 text-red-500">
-          TRENDING
+          TRENDING THIS WEEK
         </h2>
         <FlipMove className="flex flex-wrap justify-center overflow-y-hidden pt-4 pb-12 gap-y-5">
           {movieList.map((movie) => (
@@ -45,7 +44,7 @@ function Homepage() {
           ))}
         </FlipMove>
         {!isLoading && (
-          <div className="px-4 py-3 flex items-center justify-between sm:px-6">
+          <div className="px-auto py-3 flex items-center justify-between sm:px-6">
             <div className="flex-1 flex items-center justify-center">
               <div>
                 <nav
@@ -68,7 +67,7 @@ function Homepage() {
                         behavior: "smooth",
                       });
                     }}
-                    className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                    className={`relative inline-flex items-center px-px md:px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                       currentPage === pageNumbers[0]
                         ? "cursor-not-allowed disabled:bg-gray-500 text-gray-50"
                         : null
@@ -96,7 +95,7 @@ function Homepage() {
                         behavior: "smooth",
                       });
                     }}
-                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                    className={`relative inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                       minPageNumberLimit === pageNumbers[0]
                         ? "cursor-not-allowed bg-gray-500 text-gray-50"
                         : null
@@ -147,7 +146,7 @@ function Homepage() {
                         behavior: "smooth",
                       });
                     }}
-                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                    className={`relative inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                       maxPageNumberLimit >= totalPages
                         ? "cursor-not-allowed disabled:bg-gray-500 text-gray-50"
                         : null
@@ -159,7 +158,7 @@ function Homepage() {
                     <DotsHorizontalIcon className="h-5 w-5" />
                   </button>
                   <p
-                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium  focus:outline-none bg-gray-500 text-gray-50`}
+                    className={`relative hidden md:inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 text-sm font-medium  focus:outline-none bg-gray-500 text-gray-50`}
                   >
                     {totalPages}
                   </p>
@@ -179,7 +178,7 @@ function Homepage() {
                         behavior: "smooth",
                       });
                     }}
-                    className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
+                    className={`relative inline-flex items-center px-px md:px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-red-500 hover:text-gray-50 focus:outline-none ${
                       currentPage === pageNumbers[pageNumbers.length - 1]
                         ? "cursor-not-allowed disabled:bg-gray-500 text-gray-50"
                         : null
