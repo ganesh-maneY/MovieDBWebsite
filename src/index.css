@@ -20,5 +20,14 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+    .showscroll::-webkit-scrollbar {
+      display: inline-block;
+    }
+
+    /* IE and Firefox */
+    .showscroll {
+      -ms-overflow-style: none;
+      scrollbar-width: 5px;
+    }
   }
 }

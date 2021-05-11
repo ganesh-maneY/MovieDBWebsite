@@ -6,7 +6,7 @@ const Categories = ({ genres, currentGenre, setCurrentGenre, classes }) => {
   return (
     <div className="relative">
       <div
-        className={`flex py-4 px-10 sm:px-20 text-xl align-middle whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-hidden hover:overflow-x-scroll hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-300 hover:scrollbar-thumb-rounded-full hover:scrollbar-track-rounded-full border-b-2 ${classes}`}
+        className={`flex py-4 px-10 sm:px-20 text-xl align-middle whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll noscroll hover:showscroll hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-300 hover:scrollbar-thumb-rounded-full hover:scrollbar-track-rounded-full border-b-2 ${classes}`}
       >
         {genres.map((genre, index) => (
           <h2

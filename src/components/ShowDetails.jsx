@@ -119,7 +119,7 @@ const ShowDetails = ({ id, details, type }) => {
       <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">Cast:</h2>
       <div
         className="flex 
-gap-x-5 overflow-x-hidden hover:overflow-x-scroll hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-300 hover:scrollbar-thumb-rounded-full hover:scrollbar-track-rounded-full overflow-y-hidden py-4"
+gap-x-5 overflow-x-scroll noscroll hover:showscroll hover:overflow-x-scroll hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-300 hover:scrollbar-thumb-rounded-full hover:scrollbar-track-rounded-full overflow-y-hidden py-4"
       >
         {cast.slice(0, cast.length - 1).map((c, index) => (
           <Avatar key={index} cast={c} />
