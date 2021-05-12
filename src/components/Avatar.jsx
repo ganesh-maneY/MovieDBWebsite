@@ -13,7 +13,7 @@ const Avatar = ({ cast }) => {
               <p>{cast.name}</p>
             </div>
             <div className="pb-2">
-              <p>{cast.character}</p>
+              <p className="overflow-x-auto noscroll">{cast.character}</p>
             </div>
           </div>
         </div>

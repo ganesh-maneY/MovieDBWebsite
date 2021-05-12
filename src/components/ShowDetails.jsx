@@ -25,7 +25,7 @@ const ShowDetails = ({ id, details, type }) => {
       <h2 className="text-xl md:text-4xl font-bold text-center mb-4">
         {details.title || details.name}
       </h2>
-      <div className="relative flex  items-center">
+      <div className="relative flex items-center">
         <div className="w-full px-0 md:px-4 py-2 md:py-5 ">
           <img
             className="shadow rounded w-full h-auto align-middle border-2"
@@ -39,49 +39,65 @@ const ShowDetails = ({ id, details, type }) => {
             alt={details.title}
           />
         </div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <PlayIcon
-            className="h-8 md:h-20 cursor-pointer"
-            onClick={() => setShowVideo(true)}
-          />
-        </div>
+        {movieVideo && (
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <PlayIcon
+              className="h-8 md:h-20 cursor-pointer"
+              onClick={() => setShowVideo(true)}
+            />
+          </div>
+        )}
         {showVideo && (
           <PlayVideo url={movieVideo} setShowModal={setShowVideo} />
         )}
       </div>
 
-      <div>
-        <h2 className="text-lg md:text-xl font-bold text-left ">Genre:</h2>
-        {details.genres &&
-          details.genres.map((genre) => (
-            <button
-              key={genre.id}
-              className="bg-transparent hover:bg-red-500  font-bold hover:text-white py-2 px-4 rounded-full focus:outline-none"
-            >
-              {genre.name}
-            </button>
-          ))}
-      </div>
-      <div className="flex justify-between">
-        <h2 className="text-sm md:text-xl font-bold text-left mt-4 ">
-          {`Rating : ${details.vote_average}/10`}
-        </h2>
-        <h2 className="text-sm md:text-xl font-bold text-left mt-4 ">
-          {`Release Date : ${details.release_date || details.first_air_date}`}
-        </h2>
-      </div>
-      <StarRatings
-        rating={details.vote_average}
-        starRatedColor="gold"
-        numberOfStars={10}
-        starDimension="20px"
-        starSpacing="2px"
-        name="rating"
-      />
-      <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
-        Overview :
-      </h2>
-      <p className="pl-2">{details.overview}</p>
+      {details.genres && (
+        <div>
+          <h2 className="text-lg md:text-xl font-bold text-left ">Genre:</h2>
+          {details.genres &&
+            details.genres.map((genre) => (
+              <button
+                key={genre.id}
+                className="bg-transparent hover:bg-red-500  font-bold hover:text-white py-2 px-4 rounded-full focus:outline-none"
+              >
+                {genre.name}
+              </button>
+            ))}
+        </div>
+      )}
+      {details.vote_average && (
+        <>
+          <div className="flex justify-between">
+            <h2 className="text-sm md:text-xl font-bold text-left mt-4 ">
+              {`Rating : ${details.vote_average}/10`}
+            </h2>
+
+            <h2 className="text-sm md:text-xl font-bold text-left mt-4 ">
+              {`Release Date : ${
+                details.release_date || details.first_air_date
+              }`}
+            </h2>
+          </div>
+
+          <StarRatings
+            rating={details.vote_average}
+            starRatedColor="gold"
+            numberOfStars={10}
+            starDimension="20px"
+            starSpacing="2px"
+            name="rating"
+          />
+        </>
+      )}
+      {details.overview && (
+        <div>
+          <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
+            Overview :
+          </h2>
+          <p className="pl-2">{details.overview}</p>
+        </div>
+      )}
 
       <div className="flex-nowrap">
         {details.runtime && (
@@ -94,17 +110,21 @@ const ShowDetails = ({ id, details, type }) => {
             } Minutes`}</p>
           </div>
         )}
-        <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
-          Home Page :
-        </h2>
-        <a
-          className="cursor-pointer pl-2"
-          href={details.homepage}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {details.homepage}
-        </a>
+        {details.homepage && (
+          <div>
+            <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
+              Home Page :
+            </h2>
+            <a
+              className="cursor-pointer pl-2"
+              href={details.homepage}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {details.homepage}
+            </a>
+          </div>
+        )}
       </div>
       {cast[cast.length - 1] !== undefined && (
         <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">
@@ -112,7 +132,9 @@ const ShowDetails = ({ id, details, type }) => {
         </h2>
       )}
       <p className="pl-2">{cast[cast.length - 1]}</p>
-      <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">Cast :</h2>
+      {cast.slice(0, cast.length - 1).length > 0 && (
+        <h2 className="text-lg md:text-xl font-bold text-left mt-4 ">Cast :</h2>
+      )}
       <div
         className="flex 
 gap-x-5 overflow-x-scroll noscroll hover:showscroll hover:overflow-x-scroll hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-300 hover:scrollbar-thumb-rounded-full hover:scrollbar-track-rounded-full overflow-y-hidden py-4"

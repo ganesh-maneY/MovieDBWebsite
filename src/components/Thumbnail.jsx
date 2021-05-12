@@ -40,7 +40,7 @@ const Thumbnail = forwardRef(({ movie }, ref) => {
               <p className="uppercase">
                 {movie.type === "tv" ? "TV Series" : "Movie"}
               </p>
-              <p>{new Date(movie.date).getFullYear()}</p>
+              {movie.date && <p>{new Date(movie.date).getFullYear()}</p>}
             </div>
           </div>
         </Link>
