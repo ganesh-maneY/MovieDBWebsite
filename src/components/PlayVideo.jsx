@@ -14,7 +14,7 @@ const PlayVideo = ({ setShowModal, url }) => {
           controls={true}
         />
         <button
-          className="absolute px-6 py-2 mb-1 mr-1 text-sm font-bold text-red-500 uppercase transition-all duration-150 ease-linear outline-none top-4 -right-5 md:right-40 background-transparent focus:outline-none"
+          className="absolute px-6 py-2 mb-1 mr-1 text-sm font-bold text-red-500 uppercase transition-all duration-150 ease-linear outline-none top-2 -right-5 md:right-52 background-transparent focus:outline-none"
           type="button"
           onClick={() => setShowModal(false)}
         >
