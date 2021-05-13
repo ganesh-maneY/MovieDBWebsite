@@ -11,7 +11,7 @@ import FlipMove from "react-flip-move";
 import { fetchSearch } from "../utils/api";
 const types = [
   { id: "movie", name: "Movies" },
-  { id: "tv", name: "TV series" },
+  { id: "tv", name: "TV Series" },
 ];
 const Search = () => {
   const [activeType, setActiveType] = useState("movie");
