@@ -1,9 +1,10 @@
 import ReactPlayer from "react-player/lazy";
+import { XIcon } from "@heroicons/react/solid";
 
 const PlayVideo = ({ setShowModal, url }) => {
   return (
     <>
-      <div className="p-5 z-50">
+      <div className="z-50 p-5">
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${url}`}
           className="absolute top-0 left-0"
@@ -13,15 +14,15 @@ const PlayVideo = ({ setShowModal, url }) => {
           controls={true}
         />
         <button
-          className="absolute top-4 -right-5 md:right-40 text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          className="absolute px-6 py-2 mb-1 mr-1 text-sm font-bold text-red-500 uppercase transition-all duration-150 ease-linear outline-none top-4 -right-5 md:right-40 background-transparent focus:outline-none"
           type="button"
           onClick={() => setShowModal(false)}
         >
-          Close
+          <XIcon className="w-5 h-5" />
         </button>
       </div>
 
-      <div className="opacity-75 fixed inset-0 z-40 bg-black"></div>
+      <div className="fixed inset-0 z-40 bg-black opacity-75"></div>
     </>
   );
 };

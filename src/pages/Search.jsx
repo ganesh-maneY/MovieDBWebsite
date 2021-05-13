@@ -58,9 +58,9 @@ const Search = () => {
   return (
     <div className="pt-16 pb-20">
       <div className="flex justify-center">
-        <div className=" flex md:flex-1 items-center bg-gray-50 text-black rounded-full shadow-xl mt-2 -mb-2 md:my-2 md:max-w-xl">
+        <div className="flex flex-row items-center mt-2 -mb-2 text-black rounded-full shadow-xl md:flex-1 bg-gray-50 md:my-2 md:max-w-xl">
           <input
-            className="bg-transparent rounded-l-full w-full py-1 md:py-4 px-6 leading-tight focus:outline-none text-black"
+            className="w-full px-6 py-2.5 leading-tight text-black bg-transparent rounded-l-full md:py-4 focus:outline-none"
             id="search"
             type="text"
             placeholder="Search"
@@ -72,12 +72,12 @@ const Search = () => {
               }
             }}
           />
-          <div className="align-middle p-3 pr-5  md:pr-10">
+          <div className="flex flex-col justify-center pr-5">
             <button
               className="focus:outline-none"
               onClick={handleClick.current}
             >
-              <SearchIcon className="h-5 w-5" />
+              <SearchIcon className="w-5 h-5 md:w-7 md:h-7" />
             </button>
           </div>
         </div>
@@ -88,17 +88,17 @@ const Search = () => {
         setCurrentGenre={setActiveType}
         classes="justify-center"
       />
-      <FlipMove className="flex flex-wrap justify-center overflow-y-hidden pt-4 pb-12 gap-y-5">
+      <FlipMove className="flex flex-wrap justify-center pt-4 pb-12 overflow-y-hidden gap-y-5">
         {movieList.map((movie) => (
           <Thumbnail key={movie.id} movie={movie} />
         ))}
       </FlipMove>
       {!isLoading && (
-        <div className="px-auto py-3 flex items-center justify-between sm:px-6">
-          <div className="flex-1 flex items-center justify-center">
+        <div className="flex items-center justify-between py-3 px-auto sm:px-6">
+          <div className="flex items-center justify-center flex-1">
             <div>
               <nav
-                className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+                className="relative z-0 inline-flex -space-x-px rounded-md shadow-sm"
                 aria-label="Pagination"
               >
                 <button
@@ -125,7 +125,7 @@ const Search = () => {
                   disabled={currentPage === pageNumbers[0] ? "disabled" : null}
                 >
                   <span className="sr-only">Previous</span>
-                  <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+                  <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
                 </button>
                 <button
                   onClick={async () => {
@@ -152,7 +152,7 @@ const Search = () => {
                     minPageNumberLimit === pageNumbers[0] ? "disabled" : null
                   }
                 >
-                  <DotsHorizontalIcon className="h-5 w-5" />
+                  <DotsHorizontalIcon className="w-5 h-5" />
                 </button>
                 {pageNumbers.map(
                   (number) =>
@@ -203,7 +203,7 @@ const Search = () => {
                     maxPageNumberLimit >= totalPages ? "disabled" : null
                   }
                 >
-                  <DotsHorizontalIcon className="h-5 w-5" />
+                  <DotsHorizontalIcon className="w-5 h-5" />
                 </button>
                 <p
                   className={`relative hidden md:inline-flex items-center px-1 md:px-2 py-2 border border-gray-300 text-sm font-medium  focus:outline-none bg-gray-500 text-gray-50`}
@@ -238,7 +238,7 @@ const Search = () => {
                   }
                 >
                   <span className="sr-only">Next</span>
-                  <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+                  <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
                 </button>
               </nav>
             </div>
