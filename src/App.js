@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import MovieDetails from "./pages/MovieDetails";
 import TV from "./pages/TV";
@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Movies from "./pages/Movies";
 import TvDetails from "./pages/TvDetails";
 import Search from "./pages/Search";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Route path="/search" component={Search} />
         <Route path="/movie/:id" component={MovieDetails} />
         <Route path="/tv/:id" component={TvDetails} />
+        <Route path="/404" component={PageNotFound} />
+        <Redirect to="/404" />
       </Switch>
       <Navbar />
     </main>
