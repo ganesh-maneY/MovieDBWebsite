@@ -132,7 +132,7 @@ const ShowDetails = ({ id, details, type }) => {
               Episode Run Time :
             </h2>
             <p className="pl-2 text-sm md:text-xl">
-              {details.episode_run_time} Minutes
+              {details.episode_run_time[0]} Minutes
             </p>
           </div>
         )}
@@ -182,7 +182,7 @@ const ShowDetails = ({ id, details, type }) => {
 
       {similarMovies.length > 0 && (
         <h2 className="mt-4 text-sm font-bold text-left md:text-xl">
-          Similar Movies:
+          Similar:
         </h2>
       )}
       <FlipMove className="flex flex-wrap justify-center pt-4 pb-12 overflow-y-hidden gap-y-5">
