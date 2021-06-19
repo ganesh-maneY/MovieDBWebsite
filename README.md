@@ -1,4 +1,4 @@
-# Deployed Version available at -
+# Deployed Version available at
 https://movies-db-web-app.netlify.app/
 
 # Getting Started with Create React App
